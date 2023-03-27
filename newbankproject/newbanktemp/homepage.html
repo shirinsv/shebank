@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" >
+  <link rel="stylesheet" href="{% static '/css/style.css' %}">
+  <style>
+
+               button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: auto;
+  border: none;
+  cursor: pointer;
+  width:100%;
+}
+
+
+
+button:hover {
+  opacity: 0.8;}
+body{
+
+        background-size:100% 100%;
+        background-repeat:no-repeat;
+        background-position:center;
+        background-attachment:fixed;
+        }
+
+  </style>
+  <script>
+    window.location.href = nextURL;
+  </script>
+
+</head>
+<!--style="background-image:{% static url 'img/bank.jpg' %};"-->
+<body background="{% static '/img/money.jpg' %}">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">E-banking</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'newbankapp:homepage' %}">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'logbank:login' %}">Login</a>
+      </li>
+      <li class="nav-item dropdown {% if 'newbankapp' in request.path %} active {% endif %}">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          District
+        </a>
+
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="//en.m.wikipedia.org/wiki/Kozhikode" target="_blank" >Kozhikode</a></li>
+           <li><a class="dropdown-item" href="//en.m.wikipedia.org/wiki/Kannur" target="_blank">Kannur</a></li>
+           <li><a class="dropdown-item" href="//en.m.wikipedia.org/wiki/Malapuram" target="_blank">Malapuram</a></li>
+            <li><a class="dropdown-item" href="//en.m.wikipedia.org/wiki/Wayanad" target="_blank">Wayanad</a></li>
+             <li><a class="dropdown-item" href="//en.m.wikipedia.org/wiki/Palakad" target="_blank">Palakad</a></li>
+        </ul>
+
+
+
+
+
+      </li>
+
+
+    </ul>
+  </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+<button type="button" class="block"> <a href="{% url 'logbank:login' %}">Get started with internet banking</a> </button>
+
+<script src="{% static 'js/popper.min.js' %}" ></script>
+<script src="{% static 'js/bootstrap.min.js' %}" ></script>
+</body>
+</html>
